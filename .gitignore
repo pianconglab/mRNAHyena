@@ -1,4 +1,5 @@
-
+# protein dataset (large, local only)
+data/protein_data/
 
 data.tar.gz
 *.tsf

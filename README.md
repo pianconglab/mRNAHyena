@@ -31,13 +31,13 @@ if you fail to run the command, you may need install [git lfs](https://git-lfs.c
 - create a conda environment, with Python 3.8
 
 ```
-conda create -n prot-hyena python=3.8
+conda create -n mRNA-hyena python=3.8
 ```
 
 - The repo is developed with Pytorch 2.4, using cuda 12.4
 
 ```
-conda install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia
+pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https://download.pytorch.org/whl/cu124
 ```
 
 - install requirements:
@@ -49,7 +49,7 @@ pip install -r requirements.txt
 - install Flash Attention, these [notes](https://github.com/HazyResearch/safari#getting-started) will be helpful.
 
 ```
-cd ProtHyena
+cd mRNAHyena
 cd flash-attention
 pip install -e . --no-build-isolation
 ```

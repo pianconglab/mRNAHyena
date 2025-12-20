@@ -1,5 +1,5 @@
 _name_: prot14m
-fasta_file: "/raid_elmo/home/lr/zym/data/protein_data/Pfam-A_small_new.fasta"
+fasta_file: "/home/wanghanyi/mRNAHyena/data/protein_data/uniprot_sprot.fasta"
 # fasta_file: "/raid_elmo/home/lr/zym/data/protein_data/Pfam-A-new.fasta"
 # prot14m_dir: "/raid_elmo/home/lr/zym/data/protein"
 dataset_name: prot14m
