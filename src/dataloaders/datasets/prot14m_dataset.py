@@ -10,6 +10,7 @@ import os
 import time
 import math
 from functools import reduce
+from hydra.utils import get_original_cwd
 
 # helper functions
 
@@ -405,6 +406,8 @@ class Prot14MDataset(torch.utils.data.Dataset):
         
         # fasta_file = "/raid_elmo/home/lr/zym/data/rna_data/rnacentral_active.fasta"
         fasta_file = Path(fasta_file)
+        if not fasta_file.is_absolute():
+            fasta_file = Path(get_original_cwd()) / fasta_file
         self.fasta_file = fasta_file
         
         assert sum(split_ratio) == 1, "Split ratios must sum up to 1"

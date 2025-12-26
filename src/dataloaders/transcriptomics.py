@@ -50,7 +50,7 @@ class MRNA(SequenceDataset):
         # if self.bed_file is None:
         #     self.bed_file = default_data_path / self._name_ / 'human-sequences.bed'
         if self.fasta_file is None:
-            self.fasta_file = default_data_path / self._name_ / 'Pfam-A.fasta'
+            self.fasta_file = default_data_path / self._name_ / 'uniprot_sprot.fasta'
 
         if fault_tolerant:
             assert self.shuffle
