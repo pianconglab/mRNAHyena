@@ -37,6 +37,7 @@ conda create -n mRNA-hyena python=3.8
 - The repo is developed with Pytorch 2.4, using cuda 12.4
 
 ```
+conda install cuda -c nvidia/label/cuda-12.4.1
 pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https://download.pytorch.org/whl/cu124
 ```
 
