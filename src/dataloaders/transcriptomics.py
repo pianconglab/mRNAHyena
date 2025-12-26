@@ -1,3 +1,11 @@
+from typing import Any, List, Union
+from torch.utils.data.dataloader import DataLoader, Dataset
+
+from src.dataloaders.base import SequenceDataset, default_data_path
+
+from src.dataloaders.datasets.hg38_char_tokenizer import CharacterTokenizer
+from src.dataloaders.datasets.mRNA_dataset import MRNADataset
+
 class MRNA(SequenceDataset):
     """
     Base class, other dataloaders can inherit from this class.
@@ -64,34 +72,24 @@ class MRNA(SequenceDataset):
             assert ddp and fault_tolerant
 
     def setup(self, stage=None):
-        """Set up the tokenizer and init the datasets."""
-        # TODO instantiate with registry
-
         if self.tokenizer_name == 'char':
             print("**Using Char-level tokenizer**")
             self.tokenizer = CharacterTokenizer(
-                characters=['D', 'N', 'E', 'K', 'V', 'Y', 'A', 'Q', 'M', 'I', 'T', 
-                    'L', 'R', 'F', 'G', 'C', 'S', 'P', 'H', 'W', 'X', 'U', 'B', 'O', 'Z'],  # for protein seq
+                characters=['A', 'C', 'G', 'T', 'N'],
                 model_max_length=self.max_length + 2,  # add 2 since default adds eos/eos tokens, crop later
                 add_special_tokens=False,
             )
         elif self.tokenizer_name == 'bpe':
-            print("Using BPE tokenizer")
-            self.tokenizer = BPETokenizer(
-                vocab_file='/raid_elmo/home/lr/zym/data/protein_data/tokenization/byte-level-bpe/updated_vocab.json',
-                merges_file='/raid_elmo/home/lr/zym/data/protein_data/tokenization/byte-level-bpe/merges.txt',
-                model_max_length=self.max_length # 假设 max_length 是预定义的
-            )
-            # print("**using pretrained AIRI tokenizer**")
-            # self.tokenizer = AutoTokenizer.from_pretrained('AIRI-Institute/gena-lm-bert-base')
-            # print("**using local tokenizer**")
-            # local_tokenizer_path = '/raid_elmo/home/lr/zym/data/protein_data/tokenization/byte-level-bpe'  # 将此路径替换为您本地tokenizer的实际路径
-            # self.tokenizer = AutoTokenizer.from_pretrained(local_tokenizer_path, padding_side='left')
+            print("**using pretrained AIRI tokenizer**")
+            self.tokenizer = AutoTokenizer.from_pretrained('AIRI-Institute/gena-lm-bert-base')
+        else:
+            raise ValueError(f"Invalid tokenizer name: {self.tokenizer_name}")
 
         self.vocab_size = len(self.tokenizer)
-
-        self.init_datasets()  # creates the datasets.  You can also just create this inside the setup() here.
-
+        
+        # Create datasets
+        self.init_datasets()
+        
     def init_datasets(self):
         """Init the datasets (separate from the tokenizer)"""
 
@@ -109,7 +107,7 @@ class MRNA(SequenceDataset):
         
         print("creat dataset")
         self.dataset_train, self.dataset_val, self.dataset_test = [
-            Prot14MDataset(split=split,
+            MRNADataset(split=split,
                         fasta_file=self.fasta_file,
                         max_length=max_len,
                         tokenizer=self.tokenizer,  # pass the tokenize wrapper
@@ -197,3 +195,4 @@ class MRNA(SequenceDataset):
             # behind, so we're using the optimizer's progress. This is set correctly in seq.py.
             self.fast_forward_batches = checkpoint['loops']['fit_loop']['epoch_loop.batch_progress']['current']['completed']
         # At this point the train loader hasn't been constructed yet
+
