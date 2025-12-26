@@ -63,6 +63,10 @@ pip install -e . --no-build-isolation
 CUDA_VISIBLE_DEVICES=0 python -m train wandb=null experiment=prot14m/prot14m_hyena trainer.devices=1
 ```
 
+```
+CUDA_VISIBLE_DEVICES=0 python -m train wandb=null experiment=mRNA/mRNA_hyena trainer.devices=1
+```
+
 ## Fine-tuning
 
 Note: we have provided the pretrained checkpoint and dataset in the `checkpoint` and `data` folders in this repo for your convenience.

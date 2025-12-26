@@ -1,5 +1,5 @@
 _name_: mRNA
-fasta_file: "/home/wanghanyi/mRNAHyena/data/mRNA_data/uniprot_sprot.fasta"
+fasta_file: data/mRNA_data/human_mRNA.fasta
 # fasta_file: "/raid_elmo/home/lr/zym/data/protein_data/Pfam-A-new.fasta"
 # prot14m_dir: "/raid_elmo/home/lr/zym/data/protein"
 dataset_name: mRNA
