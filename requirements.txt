@@ -31,4 +31,6 @@ genomic-benchmarks
 loguru
 liftover
 
+# FlashAttention
 ninja #加快FlashAttention编译速度
+packaging
