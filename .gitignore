@@ -1,3 +1,5 @@
+slurm_logs/
+
 # dataset (large, local only)
 data/protein_data/
 data/mRNA_data/
