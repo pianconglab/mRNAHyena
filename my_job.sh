@@ -10,7 +10,7 @@
 # 3. 不会用没关系：只需要改 3 个地方就能跑
 #
 # 使用方法（最简单）：
-#   sbatch slurm_template.sh
+#   sbatch my_job.sh
 #
 # 或调试用（交互模式）：
 #   srun -p gpu --gres=gpu:1 --cpus-per-task=4 --mem=8G --pty bash

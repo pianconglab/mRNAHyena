@@ -366,6 +366,7 @@ class LMBackbone(nn.Module):
         hidden_states = self.embeddings(
             input_ids, position_ids=position_ids, **embedding_kwargs
         )
+        # print("hidden_states", hidden_states.shape)  # e.g. (batch, seqlen, d_model)
         residual = None
         mixer_kwargs = (
             {"seqlen": input_ids.shape[1]}
