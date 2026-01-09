@@ -133,3 +133,5 @@ dmypy.json
 
 run_train.sh
 standalone_*.py
+
+demo/
