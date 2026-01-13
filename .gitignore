@@ -135,3 +135,5 @@ run_train.sh
 standalone_*.py
 
 demo/
+
+checkpoint/**/embeddings.pt
