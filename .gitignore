@@ -136,4 +136,5 @@ standalone_*.py
 
 demo/
 
+checkpoint/cache/
 checkpoint/**/embeddings.pt

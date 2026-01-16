@@ -4,13 +4,13 @@ import pandas as pd
 # 配置部分 —— 修改为你的实际路径
 # =============================================================================
 csv_files = [
-    "/share/datasets/mRNA/refseq/vertebrate_mammalian/NM_mRNA/vertebrate_mammalian_mRNA_filtered.csv",
+    "/share/datasets/mRNA/refseq/viral/host_human.csv",
 ]
 
-output_fasta = "data/mRNA_data/NM_vertebrate_mammalian_mRNA_filtered_separators.fasta"
+output_fasta = "data/mRNA_data/viral_host_human_separators.fasta"
 
 # ★ 分隔符（可自行修改，如 "|"、"NNN"、"<CDS>" 等）
-SEPARATOR = "|"
+SEPARATOR = "<SEP>"
 
 # =============================================================================
 # 主处理代码

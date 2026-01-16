@@ -26,8 +26,8 @@
 
 #SBATCH --job-name=example_gpu_task   # 作业名字（随便起）
 #SBATCH --partition=gpu               # 计算资源池（不要改）
-#SBATCH --output=slurm_logs/slurm-%j.out         # 输出日志（%j=作业ID）
-#SBATCH --error=slurm_logs/slurm-%j.err          # 错误日志
+#SBATCH --output=slurm_logs/slurm-%x-%j.out         # 输出日志（%j=作业ID）
+#SBATCH --error=slurm_logs/slurm-%x-%j.err          # 错误日志
 
 ########################
 # 二、资源申请（重点）
@@ -35,7 +35,7 @@
 
 #SBATCH --gres=gpu:1                  # 申请 1 张 GPU（1~4）
 #SBATCH --cpus-per-task=16            # CPU 线程数（最大48）
-#SBATCH --mem=16G                     # 内存（最大256G）
+#SBATCH --mem=128G                     # 内存（最大256G）
 #SBATCH --time=24:00:00               # 最长运行时间（hh:mm:ss）
 
 # 注意：
@@ -71,7 +71,7 @@ conda activate mRNA-hyena
 nvidia-smi
 
 # 示例 2：运行 Python 程序
-python -m train experiment=mRNA/mRNA_hyena trainer.devices=1
+python -m evo2.test.test_evo2_generation --model_name evo2_7b
 
 # 示例 3：sleep 模拟任务（测试用）
 sleep 10
