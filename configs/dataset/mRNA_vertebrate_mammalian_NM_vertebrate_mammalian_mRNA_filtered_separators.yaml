@@ -1,5 +1,5 @@
 _name_: mRNA
-fasta_file: data/mRNA_data/complete_NM_mRNA_filtered_separators.fasta
+fasta_file: data/mRNA_data/vertebrate_mammalian_NM_vertebrate_mammalian_mRNA_filtered_separators.fasta
 # fasta_file: "/raid_elmo/home/lr/zym/data/protein_data/Pfam-A-new.fasta"
 # prot14m_dir: "/raid_elmo/home/lr/zym/data/protein"
 dataset_name: mRNA
