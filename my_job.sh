@@ -24,7 +24,7 @@
 # 一、作业基本信息（可改）
 ########################
 
-#SBATCH --job-name=vertebrate_mammalian_XM_vertebrate_mammalian_mRNA_filtered_separators   # 作业名字（随便起）
+#SBATCH --job-name=complete_XM_mRNA_filtered_separators   # 作业名字（随便起）
 #SBATCH --partition=gpu               # 计算资源池（不要改）
 #SBATCH --output=slurm_logs/slurm-%x-%j.out         # 输出日志（%j=作业ID）
 #SBATCH --error=slurm_logs/slurm-%x-%j.err          # 错误日志
@@ -71,7 +71,7 @@ conda activate mRNA-hyena
 nvidia-smi
 
 # 示例 2：运行 Python 程序
-python -m train wandb=null experiment=mRNA/mRNA_hyena_vertebrate_mammalian_XM_vertebrate_mammalian_mRNA_filtered_separators.yaml trainer.devices=1
+python -m train wandb=null experiment=mRNA/mRNA_hyena_complete_XM_mRNA_filtered_separators.yaml trainer.devices=1
 
 # 示例 3：sleep 模拟任务（测试用）
 sleep 10

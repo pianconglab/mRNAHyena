@@ -15,9 +15,17 @@ csv_files = [
     # "/share/datasets/mRNA/refseq/vertebrate_mammalian/XM_mRNA/human_mRNA_filtered.csv",
     # "/share/datasets/mRNA/refseq/vertebrate_mammalian/XM_mRNA/human_mRNA.csv",
     # "/share/datasets/mRNA/refseq/vertebrate_mammalian/XM_mRNA/vertebrate_mammalian_mRNA_filtered.csv",
-    "/share/datasets/mRNA/refseq/vertebrate_mammalian/XM_mRNA/vertebrate_mammalian_mRNA.csv",
+    # "/share/datasets/mRNA/refseq/vertebrate_mammalian/XM_mRNA/vertebrate_mammalian_mRNA.csv",
     # "/share/datasets/mRNA/refseq/complete/complete_NM_mRNA_filtered.csv",
     # "/share/datasets/mRNA/refseq/complete/complete_XM_mRNA_filtered.csv",
+    # "/home_zfs/wanghanyi/mRNAHyena/scripts/Homo_sapiens_sample.csv",                   # 人
+    # "/home_zfs/wanghanyi/mRNAHyena/scripts/Mus_musculus_sample.csv",                 # 小鼠
+    # "/home_zfs/wanghanyi/mRNAHyena/scripts/Drosophila_melanogaster_sample.csv",      # 果蝇
+    # "/home_zfs/wanghanyi/mRNAHyena/scripts/Caenorhabditis_elegans_sample.csv",       # 线虫
+    # "/home_zfs/wanghanyi/mRNAHyena/scripts/Danio_rerio_sample.csv",                  # 斑马鱼
+    # "/home_zfs/wanghanyi/mRNAHyena/scripts/Arabidopsis_thaliana_sample.csv",         # 拟南芥
+    # "/home_zfs/wanghanyi/mRNAHyena/scripts/Zea_mays_sample.csv",                     # 玉米
+    "/home_zfs/wanghanyi/mRNAHyena/scripts/Saccharomyces_cerevisiae_S288C_sample.csv",# 啤酒酵母 S288C
 ]
 
 # output_fasta = "data/mRNA_data/vertebrate_mammalian_NM_human_mRNA_filtered_separators.fasta"
@@ -27,9 +35,19 @@ csv_files = [
 # output_fasta = "data/mRNA_data/vertebrate_mammalian_XM_human_mRNA_filtered_separators.fasta"
 # output_fasta = "data/mRNA_data/vertebrate_mammalian_XM_human_mRNA_separators.fasta"
 # output_fasta = "data/mRNA_data/vertebrate_mammalian_XM_vertebrate_mammalian_mRNA_filtered_separators.fasta"
-output_fasta = "data/mRNA_data/vertebrate_mammalian_XM_vertebrate_mammalian_mRNA_separators.fasta"
+# output_fasta = "data/mRNA_data/vertebrate_mammalian_XM_vertebrate_mammalian_mRNA_separators.fasta"
 # output_fasta = "data/mRNA_data/complete_NM_mRNA_filtered_separators.fasta"
 # output_fasta = "data/mRNA_data/complete_XM_mRNA_filtered_separators.fasta"
+
+# 新增：对应采样物种的 FASTA 路径（逐个使用时自行选用）
+# output_fasta = "data/mRNA_data/Homo_sapiens_sample_separators.fasta"                    # 人
+# output_fasta = "data/mRNA_data/Mus_musculus_sample_separators.fasta"                    # 小鼠
+# output_fasta = "data/mRNA_data/Drosophila_melanogaster_sample_separators.fasta"         # 果蝇
+# output_fasta = "data/mRNA_data/Caenorhabditis_elegans_sample_separators.fasta"          # 线虫
+# output_fasta = "data/mRNA_data/Danio_rerio_sample_separators.fasta"                     # 斑马鱼
+# output_fasta = "data/mRNA_data/Arabidopsis_thaliana_sample_separators.fasta"            # 拟南芥
+# output_fasta = "data/mRNA_data/Zea_mays_sample_separators.fasta"                        # 玉米
+output_fasta = "data/mRNA_data/Saccharomyces_cerevisiae_S288C_sample_separators.fasta"  # 啤酒酵母 S288C
 
 # ★ 分隔符（可自行修改，如 "|"、"NNN"、"<CDS>" 等）
 SEPARATOR = "|"
