@@ -1,6 +1,6 @@
 # @package _global_
 defaults:
-  - /pipeline: mRNA
+  - /pipeline: mRNA_complete_NM_mRNA_filtered_separators
   - override /scheduler: cosine_warmup_timm
 
 model:

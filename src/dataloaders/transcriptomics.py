@@ -75,7 +75,7 @@ class MRNA(SequenceDataset):
         if self.tokenizer_name == 'char':
             print("**Using Char-level tokenizer**")
             self.tokenizer = CharacterTokenizer(
-                characters=['A', 'C', 'G', 'T', 'N'],
+                characters=['A', 'C', 'G', 'T', 'N', '|'],
                 model_max_length=self.max_length + 2,  # add 2 since default adds eos/eos tokens, crop later
                 add_special_tokens=False,
             )

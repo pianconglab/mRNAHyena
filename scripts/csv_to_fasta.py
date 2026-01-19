@@ -8,13 +8,31 @@ csv.field_size_limit(sys.maxsize)
 # 配置部分 —— 修改为你的实际路径
 # =============================================================================
 csv_files = [
-    "/share/datasets/mRNA/refseq/vertebrate_mammalian/NM_mRNA/vertebrate_mammalian_mRNA_filtered.csv",
+    # "/share/datasets/mRNA/refseq/vertebrate_mammalian/NM_mRNA/human_mRNA_filtered.csv",
+    # "/share/datasets/mRNA/refseq/vertebrate_mammalian/NM_mRNA/human_mRNA.csv",
+    # "/share/datasets/mRNA/refseq/vertebrate_mammalian/NM_mRNA/vertebrate_mammalian_mRNA_filtered.csv",
+    # "/share/datasets/mRNA/refseq/vertebrate_mammalian/NM_mRNA/vertebrate_mammalian_mRNA.csv",
+    # "/share/datasets/mRNA/refseq/vertebrate_mammalian/XM_mRNA/human_mRNA_filtered.csv",
+    # "/share/datasets/mRNA/refseq/vertebrate_mammalian/XM_mRNA/human_mRNA.csv",
+    # "/share/datasets/mRNA/refseq/vertebrate_mammalian/XM_mRNA/vertebrate_mammalian_mRNA_filtered.csv",
+    "/share/datasets/mRNA/refseq/vertebrate_mammalian/XM_mRNA/vertebrate_mammalian_mRNA.csv",
+    # "/share/datasets/mRNA/refseq/complete/complete_NM_mRNA_filtered.csv",
+    # "/share/datasets/mRNA/refseq/complete/complete_XM_mRNA_filtered.csv",
 ]
 
-output_fasta = "data/mRNA_data/complete_XM_mRNA_filtered_separaa.fasta"
+# output_fasta = "data/mRNA_data/vertebrate_mammalian_NM_human_mRNA_filtered_separators.fasta"
+# output_fasta = "data/mRNA_data/vertebrate_mammalian_NM_human_mRNA_separators.fasta"
+# output_fasta = "data/mRNA_data/vertebrate_mammalian_NM_vertebrate_mammalian_mRNA_filtered_separators.fasta"
+# output_fasta = "data/mRNA_data/vertebrate_mammalian_NM_vertebrate_mammalian_mRNA_separators.fasta"
+# output_fasta = "data/mRNA_data/vertebrate_mammalian_XM_human_mRNA_filtered_separators.fasta"
+# output_fasta = "data/mRNA_data/vertebrate_mammalian_XM_human_mRNA_separators.fasta"
+# output_fasta = "data/mRNA_data/vertebrate_mammalian_XM_vertebrate_mammalian_mRNA_filtered_separators.fasta"
+output_fasta = "data/mRNA_data/vertebrate_mammalian_XM_vertebrate_mammalian_mRNA_separators.fasta"
+# output_fasta = "data/mRNA_data/complete_NM_mRNA_filtered_separators.fasta"
+# output_fasta = "data/mRNA_data/complete_XM_mRNA_filtered_separators.fasta"
 
 # ★ 分隔符（可自行修改，如 "|"、"NNN"、"<CDS>" 等）
-SEPARATOR = "<SEP>"
+SEPARATOR = "|"
 
 # =============================================================================
 # 主处理代码
@@ -35,7 +53,7 @@ def csv_to_fasta(csv_files, output_fasta, chunksize=50_000):
             try:
                 reader = pd.read_csv(
                     file,
-                    sep=None,
+                    sep=",",
                     engine="python",
                     chunksize=chunksize,
                     usecols=required_cols,
